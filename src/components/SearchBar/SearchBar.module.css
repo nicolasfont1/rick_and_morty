@@ -1,0 +1,13 @@
+.barraSearch{
+    background-color: rgb(0, 0, 0, 0.3);
+    border-radius: 10px 0px 0px 10px;
+    color: white
+ }
+
+/* border radius: arriba izq, arriba der, derecha bajo, izquierda bajo */
+
+ .botonSearch{
+    background-color: rgb(58, 35, 80, 0.7);
+    border-radius: 0px 10px 10px 0px;
+    color: white
+ }

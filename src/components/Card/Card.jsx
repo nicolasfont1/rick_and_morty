@@ -1,21 +1,13 @@
-const divStyle = {
-   background: "grey",
-   border: "solid",
-   margin: "2em",
-}
+import style from "./Card.module.css"
 
-const buttonStyle = {
-   background: "red",
-   color: "white",
-}
-
-const Card = ({name, status, species, gender, origin, image, onClose, id}) => {
+const Card = ({name, status, species, gender, origin, image, id, onClose}) => {
    return (
-      <div style={divStyle}>
-         <button onClick={onClose} style={buttonStyle}>Close</button>
-         <h2></h2>
-         <img src={image} alt='' />
-         <h2>Name: {name}</h2>
+      <div className={style.contenedor}>
+         <div className={style.imgContainer}>
+            <img src={image} alt='' className={style.charImage}/>
+            <button onClick={()=>onClose(id)} className={style.closeButton}> X </button>
+            <h2 className={style.charName}>{name}</h2>
+         </div>
          <h2>Status: {status}</h2>
          <h2>Species: {species}</h2>
          <h2>Gender: {gender}</h2>

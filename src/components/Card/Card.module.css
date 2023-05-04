@@ -1,0 +1,53 @@
+.contenedor{
+    background-color: rgb(90, 111, 133);
+    border: 2px solid black;
+    box-shadow: 20px 20px 50px 10px rgb(58, 35, 80) inset;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    /* padding: 10px; */
+    margin: 10px;
+    width: 200px;
+    height: 30%;
+}
+
+.contenedor h2{
+    color: rgb(35, 35, 99);
+    font-size: 13px;
+}
+
+.charImage{
+    width: 100%;
+    height: auto;
+}
+
+.closeButton{
+    background-color: rgb(233, 0, 0);
+    border-radius: 10px;
+    font-size: 11px;
+    padding: 5px;
+    margin-left: 95px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.closeButton:hover{
+    background-color: rgb(197, 0, 0);
+}
+
+.imgContainer{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.charName{
+    position: absolute;
+    top: 83%;
+    left: 55%;
+    transform: translate(-110px, -6px);
+    background-color: yellow;
+    width: 88%;
+    height: 8%;
+    text-align: center
+}
