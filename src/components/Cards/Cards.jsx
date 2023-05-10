@@ -1,5 +1,5 @@
 import style from "./Cards.module.css"
-import Card from '../Card/Card';
+import Card from "../Card/Card";
 
 const Cards= ({characters, onClose}) => {
    return(

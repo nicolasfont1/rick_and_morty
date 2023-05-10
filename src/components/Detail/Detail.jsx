@@ -4,28 +4,36 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 
 const Detail = () => {
-    const {id} = useParams()
+    const { id } = useParams()
     const [character, setCharacter] = useState({})
 
     useEffect(() => {
         axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
-           if (data.name) {
+            if (data.name) {
                 setCharacter(data);
-           } else {
+            } else {
                 window.alert('No hay personajes con ese ID');
-           }
+            }
         });
         return setCharacter({});
     }, [id]);
 
-    return(
+    return (
         <div className={style.divDetail}>
-            <h1>Name: {character.name && character.name}</h1>
-            <h1>Aca me falta poner todo el detail</h1>
-            <h1>Origin: {character.origin?.name && character.origin?.name}</h1>
+            <div className={style.divText}>
+                <h1>Take a look here Morty...</h1>
+                <h1>It name is {character.name && character.name},</h1>
+                <h1>it's currently {character.status && character.status}.</h1>
+                <h1>I think that is a {character.gender && character.gender} {character.species && character.species},</h1>
+                <h1>which is originally from {character.origin?.name && character.origin?.name}.</h1>
+            </div>
+            <div className={style.divImage}>
+                <img src={character.image && character.image} alt="" />
+            </div>
         </div>
     )
 }
+
 
 //conditional chaining en origin ("?")
 //es ideal que trabajemos con esto cuando renderizamos info de una api

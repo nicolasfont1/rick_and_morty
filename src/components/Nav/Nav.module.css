@@ -4,10 +4,6 @@
     box-shadow: 1px 1px 5px 5px rgb(0, 0, 0, 0.8);
 }
 
-.divSearchBar{
-    margin-left: 80%;
-    margin-top: -25px;
-}
 
 .homeDiv{
     margin-top: 0px;
@@ -32,6 +28,76 @@
 }
 
 .aboutButton{
-    background-color: rgb(138, 43, 226, 0.9);
-    height: 30px;
+    background-color: rgb(138, 43, 226);
+    height: 25px;
+    padding: 0;
+    border: none;
+    background: none;
+}
+.aboutButton:hover{
+    font-size: 15px;
+}
+
+
+.divLogoutButton{
+    width: 65px;
+    height: 25px;
+    margin-top: -25px;
+    margin-left: 450px;
+}
+
+.logoutButton{
+    background-color: rgb(138, 43, 226);
+    color: rgb(138, 43, 226, 0.9);
+    height: 25px;
+    padding: 0;
+    border: none;
+    background: none;
+}
+.logoutButton:hover{
+    font-size: 15px;
+}
+
+
+.divFavButton{
+    width: 65px;
+    height: 25px;
+    margin-top: -25px;
+    margin-left: 370px;
+}
+
+.favButton{
+    background-color: rgb(138, 43, 226);
+    color: rgb(138, 43, 226, 0.9);
+    height: 25px;
+    padding: 0;
+    border: none;
+    background: none;
+}
+.favButton:hover{
+    font-size: 15px;
+}
+
+
+.divRandomButton{
+    width: 40px;
+    height: 28px;
+    margin-top: -23px;
+    margin-left: 1050px;
+}
+
+.randomButton{
+    background-color: rgb(58, 35, 80, 0.7);
+    border-radius: 10px 10px 10px 10px;
+    color: white;
+    font-size: large;
+}
+.randomButton:hover{
+    cursor: pointer;
+}
+    
+    
+.divSearchBar{
+    margin-left: 80%;
+    margin-top: -25px;
 }

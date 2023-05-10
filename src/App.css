@@ -3,11 +3,17 @@
    background-image: linear-gradient(
       rgb(0, 0, 0, 0.7),
       rgb(0, 0, 0, 0.7)
-   ), url(./components/background-image.jpg);
+   ), url(./Resources/background-image.jpg);
    background-position: center center;
    background-size: cover;
    background-attachment: fixed;
    min-height: 100vh;
    display: flex;
    flex-direction: column;
+   font-family: Minecraft;
+}
+
+@font-face {
+   font-family: Minecraft;
+   src: url(./Resources/Minecraft.ttf);
 }

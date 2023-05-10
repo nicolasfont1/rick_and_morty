@@ -1,5 +1,28 @@
 .divDetail{
-  font-size: large;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.divText{
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 400px;
+  width: 700px;
+  font-size: medium;
   color: white;
   margin-top: 80px;
+}
+
+.divImage{
+  margin-top: 80px;
+  width: 600px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.charImage{
+  width: 400px;
+  height: 200px;
 }

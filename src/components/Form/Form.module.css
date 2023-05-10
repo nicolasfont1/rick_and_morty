@@ -1,0 +1,62 @@
+@font-face {
+    font-family: Minecraft;
+    src: url(../../Resources/Minecraft.ttf);
+}
+
+.divContenedor{
+    display: flex;
+    width: 400px;
+    height: 550px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -20px;
+    margin-left: 460px;
+    border-radius: 25px;
+}
+
+.divImage{
+    width: auto;
+    height: auto;
+    margin-top: -5px;
+}
+h1.divImage{
+    color: white;
+    width: 700px;
+}
+
+.imageRick{
+    width: 400px;
+    height: 300px;
+}
+
+
+.labelForm{
+    color: white;
+}
+
+.warning{
+    border: solid red 2px;
+    border-radius: 0.2em;
+}
+  
+.danger{
+    font-size: 12px;
+    color: red;
+    margin-left: 10em;
+}
+
+.submitButton{
+    font-family: Minecraft ;
+    font-size: 20px;
+    color: white;
+    width: 65px;
+    height: 25px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.submitButton:hover{
+    color: rgba(128, 128, 128, 0.726)
+}
