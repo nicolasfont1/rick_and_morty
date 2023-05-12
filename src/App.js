@@ -42,7 +42,7 @@ function App() {
       } else if(characters.find((char) => char.id === data.id)){
          window.alert(`Character ID: ${id} already exists!`)
       } else {
-         window.alert('¡Whoops! Unexisten ID.');
+         window.alert('Please, insert an ID.');
       }
    });
    }

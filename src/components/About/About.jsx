@@ -3,7 +3,8 @@ import style from "./About.module.css"
 const About = () => {
     return(
         <div className={style.divAbout}>
-            Me llamo Nico soy de Talleres y me gusta la pala.
+            <h1>Me llamo Nicolás y soy hincha del club más grande de Córdoba.</h1>
+            <h2>Club Atlético Talleres</h2>
         </div>
     )
 }

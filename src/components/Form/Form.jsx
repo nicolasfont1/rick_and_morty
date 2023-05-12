@@ -34,7 +34,7 @@ const Form = (props) => {
         <div className={style.divContenedor}>
             <div className={style.divImage}>
                 <img className={style.imageRick} src={require("../../Resources/rick-face.png")} alt="" />
-                <h1 className={style.divImage}>Identify yourself unkwown creature...</h1>
+                <h1 className={style.divImage}>Identify yourself unknown creature...</h1>
             </div>
             <form>
                 <label className={style.labelForm}>Email: </label>

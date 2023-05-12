@@ -1,7 +1,8 @@
-import { ADD_FAV, REMOVE_FAV } from "./action-types"
+import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./action-types"
 
 const initialState = {
-    myFavorites: []
+    myFavorites: [],
+    allCharactersFav: []
 };
 
 const reducer = (state = initialState, action) => {
@@ -9,13 +10,31 @@ const reducer = (state = initialState, action) => {
         case ADD_FAV:
             return{
                 ...state,
-                myFavorites: [...state.myFavorites, action.payload]
+                myFavorites: [...state.allCharactersFav, action.payload],
+                allCharactersFav: [...state.allCharactersFav, action.payload]
             }
 
         case REMOVE_FAV:
             return{
                 ...state,
                 myFavorites: state.myFavorites.filter((char) => char.id !== Number(action.payload))
+            }
+
+        case FILTER:
+            const allCharFiltered = state.allCharactersFav.filter((char) => char.gender === action.payload)
+            return{
+                ...state,
+                myFavorites: allCharFiltered
+            }
+
+        case ORDER:
+            let allCharFavCopy = [...state.allCharactersFav]
+            return{
+                ...state,
+                myFavorites:
+                action.payload === "A" 
+                ? allCharFavCopy.sort((a, b) => a.id - b.id)
+                : allCharFavCopy.sort((a, b) => b.id - a.id)
             }
         
         default: return{...state}
@@ -24,6 +43,5 @@ const reducer = (state = initialState, action) => {
 
 export default reducer
 
-//PUEDE QUE REMOVE NO FUNCIONE PORQUE ID DE PAYLOAD ES STR Y EL ID DE CHAR ES INT
 //Se recomienda siempre trabajar con copias del estado {...state}, para evitar pisarlo
-//SE ROMPIA PORQUE NUNCA PASASTE ID EN EL MAP DE FAVORITES BOBOOOO
+//SE ROMPIA PORQUE NUNCA PASASTE ID EN EL MAP DE FAVORITES BOLUDOOO

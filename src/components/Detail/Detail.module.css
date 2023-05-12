@@ -13,6 +13,25 @@
   color: white;
   margin-top: 80px;
 }
+.divText h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid white; /* The typwriter cursor */
+  white-space: pre-wrap; /* Keeps the content on a single line */
+  margin: 25px; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+  100% { border-color: transparent;}
+}
 
 .divImage{
   margin-top: 80px;

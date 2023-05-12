@@ -94,6 +94,7 @@
 }
 .randomButton:hover{
     cursor: pointer;
+    font-size: 19px;
 }
     
     
