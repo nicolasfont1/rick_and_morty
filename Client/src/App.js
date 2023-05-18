@@ -36,15 +36,16 @@ function App() {
    }, [access]);
    
    const onSearch = (id) => {
-      axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
-      if(data.name && !characters.find((char) => char.id === data.id)){
-         setCharacters((oldChars) => [...oldChars, data]);
-      } else if(characters.find((char) => char.id === data.id)){
-         window.alert(`Character ID: ${id} already exists!`)
-      } else {
-         window.alert('Please, insert an ID.');
-      }
-   });
+      axios(`http://localhost:3001/rickandmorty/character/${id}`)
+      .then(({ data }) => {
+         if(data.name && !characters.find((char) => char.id === data.id)){
+            setCharacters((oldChars) => [...oldChars, data]);
+         } else if(characters.find((char) => char.id === data.id)){
+            window.alert(`Character ID: ${id} already exists!`)
+         } else {
+            window.alert('Please, insert an ID.');
+         }
+      });
    }
    
    const onClose = (id) =>{
