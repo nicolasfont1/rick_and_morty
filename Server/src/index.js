@@ -17,18 +17,3 @@ http
     }
 })
 .listen(PORT, "localhost")
-
-
-// fs.readFile("./Utils/data.js", (err, data) => {
-//     if(err){
-//         res.writeHead(404, {"Content-type": "text/plain"})
-//         return res.end("json not found")
-//     }
-//     data.forEach((elem) => {
-//         if(elem.id === id){
-//             res.writeHead(200, {"Content-type": "application/json"})
-//             return res.end(elem)
-//         }
-//     })
-// })
-// return
