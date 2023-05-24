@@ -26,6 +26,7 @@ const Favorites = () => {
                 <option value="D">Descendente</option>
             </select>
             <select className={style.filterButtonGender} onChange={handleFilter}>
+                <option value="Any">Any</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Genderless">Genderless</option>

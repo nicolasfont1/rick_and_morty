@@ -1,5 +1,5 @@
 import style from "./Card.module.css"
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { addFav, removeFav } from "../../Redux/actions"
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
@@ -18,8 +18,10 @@ const Card = ({ name, status, species, gender, origin, image, id, onClose}) => {
    const handleFavorite = () => {
       isFav ? eliminarFav(id) : agregarFav({name, status, species, gender, origin, image, id, onClose});
       setIsFav(!isFav)
-      //Linea 20, si está en true lo pasa a false y viceversa, siempre lo pasa al contrario.
+      //Linea superior es un toggle.
    }
+
+   const { pathname } = useLocation()
 
    useEffect(() => {
       myFavorites.forEach((character) => {
@@ -33,7 +35,7 @@ const Card = ({ name, status, species, gender, origin, image, id, onClose}) => {
       <div className={style.contenedor}>
          <div className={style.imgContainer}>
             <button className={style.favButton} onClick={handleFavorite}>{isFav ? "❤️" : "🤍"}</button>
-            <button onClick={() => onClose(id)} className={style.closeButton}> ✖ </button>
+            {pathname !== "/favorites" && <button onClick={() => onClose(id)} className={style.closeButton}> ✖ </button>}
             <Link to={`/detail/${id}`}>
                <img src={image} alt='' className={style.charImage} />
                <h2 className={style.charName}>{name}</h2>

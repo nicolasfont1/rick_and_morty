@@ -36,7 +36,7 @@ const Form = (props) => {
                 <img className={style.imageRick} src={require("../../Resources/rick-face.png")} alt="" />
                 <h1 className={style.divImage}>Identify yourself unknown creature...</h1>
             </div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label className={style.labelForm}>Email: </label>
                 <input name="email"
                 value={userData.email}
@@ -59,7 +59,7 @@ const Form = (props) => {
 
                 <hr />
 
-                <button className={style.submitButton} onClick={handleSubmit}>Submit</button>
+                <button className={style.submitButton}>Submit</button>
             </form>
         </div>
 

@@ -22,11 +22,18 @@ const reducer = (state = initialState, action) => {
             }
 
         case FILTER:
-            const allCharFiltered = state.allCharactersFav.filter((char) => char.gender === action.payload)
-            return{
-                ...state,
-                myFavorites: allCharFiltered
-            }
+            if(action.payload === "any"){
+                const allChar = state.myFavorites
+                return{
+                    ...state,
+                    myFavorites: allChar
+                }
+            } else {
+                const allCharFiltered = state.allCharactersFav.filter((char) => char.gender === action.payload)
+                return{
+                    ...state,
+                    myFavorites: allCharFiltered
+                }}
 
         case ORDER:
             let allCharFavCopy = [...state.allCharactersFav]

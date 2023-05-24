@@ -7,7 +7,7 @@ const login = require("../Controllers/login")
 
 router.get("/character/:id", getCharById)
 
-router.get("/login", login)
+router.get("/", login)
 
 router.post("/fav", postFav)
 

@@ -1,40 +1,27 @@
 const axios = require("axios");
 const URL = "https://rickandmortyapi.com/api/character"
 
-const getCharById = (req, res) => {
-    const {id} = req.params
+const getCharById = async (req, res) => {
+    try {
+        const { id } = req.params
+        const { data } = await axios.get(`${URL}/${id}`)
 
-    axios.get(`${URL}/${id}`)
-    .then((result) => result.data)
-    .then(({name, gender, origin, status, image, species}) => {
+        if (!data.name) throw Error(`ID ${id} not found.`)
         let character = {
-            id, 
-            name,
-            gender,
-            origin,
-            image,
-            status,
-            species
+            id: data.id,
+            name: data.name,
+            gender: data.gender,
+            origin: data.origin,
+            image: data.image,
+            status: data.status,
+            species: data.species
         }
         return res.status(200).json(character)
-    })
-    .catch((error) => res.status(500).send(error.message))
+    } catch (error) {
+        return error.message.includes("ID")
+        ? res.status(404).send(error.message)
+        : res.status(500).send(error.message)
+    }
 }
 
 module.exports = getCharById
-
-// const {id} = req.params
-// let char = undefined
-
-// axios.get(URL+id)
-// .then(response => response.data)
-// .then(data => char = data)
-// .catch(err => res.status(500).send(err.message))
-
-// char.id
-// ? res
-//     .status(200)
-//     .json(char.name, char.id, char.status, char.gender, char.species, char.origin, char.image)
-// : res
-//     .status(404)
-//     .send("Error 404, not found.")
