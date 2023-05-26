@@ -3,6 +3,12 @@
     src: url(../../Resources/Minecraft.ttf);
 }
 
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 5px); }
+    100%   { transform: translate(0, -0px); }   
+}
+
 .divContenedor{
     display: flex;
     width: 400px;
@@ -25,11 +31,14 @@ h1.divImage{
     width: 700px;
 }
 
-.imageRick{
-    width: 400px;
-    height: 300px;
+.floating { 
+    animation-name: floating;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: center;
+    margin-top: 10px;
 }
-
 
 .labelForm{
     color: white;

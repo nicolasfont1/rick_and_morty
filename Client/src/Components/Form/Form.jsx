@@ -33,7 +33,7 @@ const Form = (props) => {
 
         <div className={style.divContenedor}>
             <div className={style.divImage}>
-                <img className={style.imageRick} src={require("../../Resources/rick-face.png")} alt="" />
+                <img className={style.floating} style={{width: 400 + "px", height: 300 + "px"}} src={require("../../Resources/rick-face.png")} alt="" />
                 <h1 className={style.divImage}>Identify yourself unknown creature...</h1>
             </div>
             <form onSubmit={handleSubmit}>

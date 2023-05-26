@@ -8,8 +8,8 @@ const login = (req, res) => {
     )
 
     userFound
-    ? res.status(200).json({accessBack: true})
-    : res.status(200).json({accessBack: false})
+    ? res.status(200).json({access: true})
+    : res.status(200).json({access: false})
 }
 
 module.exports = login

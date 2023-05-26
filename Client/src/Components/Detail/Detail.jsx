@@ -28,7 +28,8 @@ const Detail = () => {
                 <h1>which is originally from {character.origin?.name && character.origin?.name}.</h1>
             </div>
             <div className={style.divImage}>
-                <img src={character.image && character.image} alt="" />
+                <img className={style.monitorImage} src={require("../../Resources/detail_monitor.png")} alt="" />
+                <img className={style.charImage} src={character.image && character.image} alt="" />
             </div>
         </div>
     )

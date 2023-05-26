@@ -21,12 +21,10 @@ function App() {
       try {
          const { email, password } = userData;
          const URL = 'http://localhost:3001/rickandmorty/';
-         const { data } = await axios(URL + `?email=${email}&password=${password}`)
-         const { accessBack } = data
-         setAccess(accessBack);
-         console.log("access state: ", access)
-         console.log("accessBack: ", accessBack)
-         access && navigate('/home')
+         const { data } = await axios(
+            URL + `?email=${email}&password=${password}`
+            )
+         setAccess(data.access);
       } catch (error) {
          return window.alert(error.message)
       }
@@ -34,11 +32,10 @@ function App() {
 
    const logout = () => {
       setAccess(false)
-      navigate("/")
    }
 
    useEffect(() => {
-      !access && navigate('/');
+      access ? navigate("/home") : navigate("/");
    }, [access]);
    
    const onSearch = async (id) => {
