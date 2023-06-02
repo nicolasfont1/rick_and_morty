@@ -1,19 +1,22 @@
-const users = require("../Utils/users")
+const { User } = require("../DB_connection");
 
-const login = (req, res) => {
-    const {email, password} = req.query
+const login = async (req, res) => {
+    try {
+        const { email, password } = req.query;
 
-    const userFound = users.find(user => 
-        user.email === email && user.password === password
-    )
+        if (!email || !password) return res.status(400).json({ error: "Datos incompletos." });
+        else {
+            const userFind = await User.findOne({where: {email}})
+            if(!userFind) return res.status(404).json({error: "Usuario no encontrado."})
+            else {
+                userFind.password === password
+                ? res.status(200).json({access: true})
+                : res.status(403).json({error: "Contraseña incorrecta."})
+            }
+        }
+    } catch (error) {
+        return res.status(500).json({error: error.message});
+    }
+};
 
-    userFound
-    ? res.status(200).json({access: true})
-    : res.status(200).json({access: false})
-}
-
-module.exports = login
-
-//El login se rompia porque en linea 7 el codigo estaba entre {}
-//"No es necesario abrir llaves si solo hay una expresion en el cuerpo
-//de la funcion." dijo el ChatGPT
+module.exports = login;
