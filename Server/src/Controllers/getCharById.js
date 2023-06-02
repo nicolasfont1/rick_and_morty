@@ -1,7 +1,7 @@
 const axios = require("axios");
 const URL = "https://rickandmortyapi.com/api/character"
 
-const getCharById = async (req, res) => {
+module.exports = async (req, res) => {
     try {
         const { id } = req.params
         const { data } = await axios.get(`${URL}/${id}`)
@@ -23,5 +23,3 @@ const getCharById = async (req, res) => {
         : res.status(500).send(error.message)
     }
 }
-
-module.exports = getCharById

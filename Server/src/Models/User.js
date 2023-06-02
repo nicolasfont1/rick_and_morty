@@ -5,7 +5,8 @@ module.exports = (database) => {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
         },
         email: {
             type: DataTypes.STRING,

@@ -22,11 +22,11 @@ const reducer = (state = initialState, action) => {
             }
 
         case FILTER:
-            if(action.payload === "any"){
+            if(action.payload === "Any"){
                 const allChar = state.myFavorites
                 return{
                     ...state,
-                    myFavorites: allChar
+                    allChar
                 }
             } else {
                 const allCharFiltered = state.allCharactersFav.filter((char) => char.gender === action.payload)

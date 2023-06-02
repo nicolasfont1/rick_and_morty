@@ -1,17 +1,15 @@
 const { Favorite } = require("../DB_connection");
 
-const deleteFav = (req, res) => {
+module.exports = async (req, res) => {
     try {
         const { id } = req.params;
 
-        const favDeleted = Favorite.destroy({where: {id}})
-        if(!favDeleted) return res.status(404).json({error: "Ningun favorito tiene ese ID."})
-        else {
-            return favDeleted
-        }
+        await Favorite.destroy({where: {id}});
+
+        const allFav = await Favorite.findAll();
+
+        return res.status(200).json(allFav)
     } catch (error) {
         return res.status(500).json({error: error.message});
     }
 };
-
-module.exports = deleteFav;

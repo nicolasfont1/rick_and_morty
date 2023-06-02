@@ -1,6 +1,6 @@
 const { User } = require("../DB_connection");
 
-const postUser = async (req, res) => {
+module.exports = async (req, res) => {
     try {
         const { email, password } = req.body;
 
@@ -9,11 +9,9 @@ const postUser = async (req, res) => {
             const newUser = await User.findOrCreate({
                 where: { email, password }
             });
-            return newUser;
+            return res.status(200).json(newUser);
         }
     } catch (error) {
         return res.status(500).json({ error: error.message })
     }
 };
-
-module.exports = postUser;
