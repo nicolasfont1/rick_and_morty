@@ -1,7 +1,7 @@
- import { useState } from "react";
- import style from "./SearchBar.module.css"
- 
- const SearchBar = (props) => {
+import { useState } from "react";
+import style from "./SearchBar.module.css"
+
+const SearchBar = (props) => {
    const [id, setId] = useState("")
 
    const handleChange = (event) => {
@@ -11,7 +11,7 @@
    return (
       <div>
          <input className={style.barraSearch} type='text' onChange={handleChange} value={id} />
-         <button className={style.botonSearch} onClick={() => {props.onSearch(id); setId("")}}>Add</button>
+         <button className={style.botonSearch} onClick={() => { props.onSearch(id); setId("") }}>Add</button>
       </div>
    );
 }
